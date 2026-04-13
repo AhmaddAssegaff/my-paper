@@ -6,6 +6,6 @@ slug: slug
 featured: false
 draft: true
 tags:
-  -
+  - tags
 description: description
 ---
