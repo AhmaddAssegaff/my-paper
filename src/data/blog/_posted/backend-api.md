@@ -9,7 +9,7 @@ tags:
   - Backend
   - REST API
   - Fundamentals
-description: Pengenalan backend, konsep API, jenis-jenis API, hingga REST API
+description: Pengenalan backend, konsep API, Jenis-Jenis API Architecture & Protocol, hingga REST API
 ---
 
 ## Apa Itu Backend?
