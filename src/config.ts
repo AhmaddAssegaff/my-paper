@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://github.com/ahmaddassegaff",
   desc: "Backend developer sharing about some Backend stuff and devops",
   title: "Ahmad Dev Paper",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "profile-github.jpeg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
@@ -12,7 +12,7 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Edit on GitHub",
     url: "https://github.com/ahmaddassegaff/my-paper/edit/main/",
   },
