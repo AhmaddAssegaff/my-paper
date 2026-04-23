@@ -9,7 +9,7 @@ tags:
   - Backend
   - REST API
   - Fundamentals
-description: Pengenalan backend, konsep API, Jenis-Jenis API Architecture & Protocol, hingga REST API
+description: Pengenalan backend, konsep API, Jenis-Jenis API Architecture / Remote Procedure Call & Protocol, hingga REST API
 ---
 
 ## Apa Itu Backend?
@@ -196,19 +196,19 @@ Status code adalah kode yang menunjukkan hasil dari request yang dikirim oleh cl
 - `5xx` : kesalahan di server
 
 #### HTTP Status Code yang Umum Digunakan
-##### Success (2xx)
+#### Success (2xx)
 - `200 OK` : Request berhasil (GET, PUT, PATCH)
 - `201 Created` : Data berhasil dibuat (POST)
 - `204 No Content` : Berhasil tanpa response body (DELETE)
 
-##### Client Error (4xx)
+#### Client Error (4xx)
 - `400 Bad Request` : Request tidak valid (input salah)
 - `401 Unauthorized` : Belum login / token tidak ada
 - `403 Forbidden` : Tidak punya akses
 - `404 Not Found` : Data tidak ditemukan
 - `422 Unprocessable Entity` : Validasi gagal
 
-##### Server Error (5xx)
+#### Server Error (5xx)
 - `500 Internal Server Error` : Error di server
 - `502 Bad Gateway` : Server lain error
 - `503 Service Unavailable` : Server sedang down / maintenance
