@@ -1,4 +1,5 @@
 ---
+import Comments from "@/components/Comments";
 import { render, type CollectionEntry } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
@@ -124,6 +125,7 @@ const nextPost =
 
     <BackToTopButton />
 
+    <Comments client:only="react" />
     <ShareLinks />
 
     <hr class="my-6 border-dashed" />
@@ -161,6 +163,23 @@ const nextPost =
     </div>
   </main>
   <Footer />
+  <script
+    is:inline
+    src="https://giscus.app/client.js"
+    data-repo="AhmaddAssegaff/my-paper"
+    data-repo-id="R_kgDOSAiZ6g"
+    data-category="General"
+    data-category-id="DIC_kwDOSAiZ6s4C7gue"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="id"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async></script>
 </Layout>
 
 <script is:inline data-astro-rerun>
