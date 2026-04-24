@@ -4,7 +4,7 @@ author: Ahmad
 pubDatetime: 2026-04-24T04:06:31Z
 slug: bagaimana-file-manager-bekerja-dan-cara-file-disimpan-di-disk
 featured: false
-draft: false
+draft: true
 # ogImage: ../../assets/images/forrest-gump-quote.png
 tags:
   - Fundamentals
