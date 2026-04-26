@@ -14,13 +14,31 @@ tags:
 description: Kamu mungkin sering copy, delete, atau save file setiap hari. Tapi, apa yang sebenarnya terjadi di balik itu semua?, Artikel ini membahas cara kerja file manager dan bagaimana file benar-benar disimpan di disk, dari yang terlihat sederhana hingga proses tersembunyi di baliknya.
 ---
 
-## Apa itu file? dan file manager?
-Apa itu file?
-Apa itu file manager?
-Contoh aktivitas:
-save file
-copy file
-delete file
+## Apa itu File dan File Manager?
+
+**Apa itu file?**  
+File adalah satuan data yang digunakan untuk menyimpan informasi, seperti dokumen, gambar, audio, video, atau program aplikasi.
+
+**Apa itu file manager?**  
+File manager adalah software yang menyediakan antarmuka pengguna (GUI) untuk mengelola file dan direktori (folder) di dalam sistem komputer maupun smartphone.
+
+### File Manager Populer di Berbagai Desktop Environment
+- `File Explorer` (default di Windows)
+- `Dolphin` (default di KDE)
+- `Nautilus` (default di GNOME)
+- `Thunar` (default di XFCE)
+- `Yazi` (berbasis terminal)
+
+### Apa saja yang biasa kita lakukan di dalam file manager?
+
+- Membuka folder  
+- Menyimpan `save` file  
+- `copy` dan `paste`  
+- `cut` atau memindahkan file  
+- `delete` file  
+- Compress file `zip`  
+- Mencari informasi yang detail sebuah file
+- Mencari informasi pada disk kita
 
 ## File itu sebenarnya apa?
 File = kumpulan data (byte)
