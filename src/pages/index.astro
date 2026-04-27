@@ -24,7 +24,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Hey there!
+        Hey!
       </h1>
       <a
         target="_blank"
@@ -48,32 +48,27 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </p>
 
       <p class="mt-4">
-        I focus on backend development — building scalable APIs using Node.js,
-        working with Docker, and exploring system design.
+        This blog is where I share what I learn and document my journey as a
+        software engineer.
+        <LinkButton
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+          href="/about/"
+        >
+          Learn more about me →
+        </LinkButton>
       </p>
 
       <p class="mt-4">
-        This blog is where I share what I learn about backend engineering,
-        DevOps, and my journey as a developer.
+        I write about what I learn and things I find interesting along the way,
+        sharing my thoughts, experiments, and lessons as I continue growing in
+        software engineering.
         <LinkButton
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
           href="/posts/"
         >
-          Read my post →
+          Read my posts →
         </LinkButton>
       </p>
-
-      <p class="text-muted-foreground mt-4 text-sm">
-        Big thanks to
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper"
-        >
-          AstroPaper
-        </LinkButton>
-        for providing this clean and minimal blog template.
-      </p>
-
       {
         // only display if at least one social link is enabled
         SOCIALS.length > 0 && (
