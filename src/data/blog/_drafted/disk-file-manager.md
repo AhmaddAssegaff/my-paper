@@ -4,7 +4,7 @@ author: Ahmad
 pubDatetime: 2026-04-24T04:06:31Z
 slug: bagaimana-file-manager-bekerja-dan-cara-file-disimpan-di-disk
 featured: false
-draft: true
+draft: false
 # ogImage: ../../assets/images/forrest-gump-quote.png
 tags:
   - Fundamentals
@@ -180,10 +180,37 @@ mount /nama_partisi   # Melihat partisi yang sedang terpasang
 ---
 
 ## Bagaimana Disk itu nyimpan data?
-Disk (HDD / SSD) menyimpan data dalam:
-block / sector
-Data tidak disimpan “utuh sebagai file”
-tapi dipecah jadi bagian kecil
+### Disk memiliki 2 jenis cara menyimpannya:
+- HDD (Hard Disk Drive)
+- SSD (Solid State Drive)
+
+### Lalu apa data yang sebenarnya di simpan ?? binary (01) ? elektron ?
+`Disk sebenarnya hanya menyimpan 0 dan 1`, sedangkan bentuk file (foto, video, dll) hanyalah interpretasi dari sistem operasi.
+`Data tidak disimpan “utuh sebagai file”`, melainkan dipecah menjadi bagian kecil yang disebut block (atau allocation unit / cluster).
+Setiap block terdiri dari beberapa sector, di mana 1 sector umumnya berukuran 4 KB (modern) atau 512 byte (legacy).
+Kemudian Setiap sector berisi kumpulan byte, di mana: 1 byte terdiri dari 8 bit, 1 bit terdiri dari 0 atau 1,
+
+> Contoh katakan kita punya sebuah file : `foto.jpg = 1 MB` (megaBytes)
+> file tersebut akan di simpan maka dia akan di ubah ke byte 1 MB = 1024 KB kemudian 1 KB = 1024 byte
+> jadi `1 MB = 1,048,576 byte`
+> Kemudian Block block tadi di pecah menjadi sector sector 1 sector = 4 KB = 4096 byte
+> Jadi `1,048,576 ÷ 4096 = 256 sector`
+> Kemudian kumpulan sector di ubah ke bit
+> jadi `1,048,576 byte = 8,388,608 bit`
+
+### Gimana caranya bit tersebut disimpan
+SSD mengunakan cara `elektronik` dengan cara baca level muatan listrik (tegangan) di sel,
+jika HDD menggunakan `mekanik` dengan cara tersebut HDD dan SSD dapat mengetahui
+
+| Komponen          | HDD (Hard Disk Drive)                  | SSD (Solid State Drive)            |
+|-------------------|----------------------------------------|------------------------------------|
+| Media Simpan      | Piringan magnetik                      | Chip flash (NAND)                  |
+| Cara Kerja        | Mekanik (lengan & piringan berputar)   | Elektrik (aliran elektron)         |
+| Representasi Bit  | Arah kutub magnet (utara/selatan)      | Muatan listrik pada sel (tegangan) |
+
+### Penjelasan detail cara HDD dan SSD sebenarnya bekerja:
+- [SSD](https://www.youtube.com/watch?v=5Mh3o886qpg)
+- [HDD](https://www.youtube.com/watch?v=wtdnatmVdIg)
 
 ## Peran File System
 File system adalah suatu cara sistem operasi (OS) untuk mengatur dan menyimpan file di storage device seperti harddisk (HDD), Solid State Drive (SSD) USB Flash Drive (UFD),
