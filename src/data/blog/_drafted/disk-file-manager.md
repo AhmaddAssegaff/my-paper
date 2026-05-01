@@ -162,11 +162,10 @@ lsblk   # Melihat struktur disk dan partisi
 df -h   # Melihat penggunaan storage (disk usage)
 ```
 ```bash
-mount /nama_partisi   # Melihat partisi yang sedang terpasang
+mount /nama_partisi   # Mount sebuah partisi
 ```
 
-> Informasi yang ditampilkan oleh perintah seperti lsblk atau df biasanya juga ditampilkan dalam file manager dalam bentuk yang lebih visual, seperti daftar disk, kapasitas storage, dan penggunaan ruang.
-> Pengelolaan partisi (seperti membuat atau menghapus partisi) sebaiknya dilakukan dengan hati-hati karena dapat menyebabkan kehilangan data.
+> Informasi yang ditampilkan oleh perintah seperti `lsblk` atau `df` biasanya juga ditampilkan dalam file manager dalam bentuk yang lebih visual, seperti daftar disk, kapasitas storage, dan penggunaan ruang.
 
 ---
 
