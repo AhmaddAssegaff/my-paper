@@ -4,7 +4,7 @@ author: Ahmad
 pubDatetime: 2026-04-24T04:06:31Z
 slug: bagaimana-file-manager-bekerja-dan-cara-file-disimpan-di-disk
 featured: false
-draft: true
+draft: false
 # ogImage: ../../assets/images/forrest-gump-quote.png
 tags:
   - Fundamentals
@@ -207,46 +207,48 @@ jika HDD menggunakan `mekanik` dengan cara tersebut HDD dan SSD dapat mengetahui
 | Cara Kerja        | Mekanik (lengan & piringan berputar)   | Elektrik (aliran elektron)         |
 | Representasi Bit  | Arah kutub magnet (utara/selatan)      | Muatan listrik pada sel (tegangan) |
 
+> Meskipun cara kerja fisik menyimpannya berbeda (elektronik vs mekanik),
+> hasilnya sama: sebuah sistem yang bisa mempertahankan status 0 dan 1 meskipun aliran listrik dimatikan (Non-volatile memory).
+
 ### Penjelasan detail cara HDD dan SSD sebenarnya bekerja:
 - [SSD](https://www.youtube.com/watch?v=5Mh3o886qpg)
 - [HDD](https://www.youtube.com/watch?v=wtdnatmVdIg)
 
 ## Peran File System
-File system adalah suatu cara sistem operasi (OS) untuk mengatur dan menyimpan file di storage device seperti harddisk (HDD), Solid State Drive (SSD) USB Flash Drive (UFD),
-File system juga berguna mengatur di mana file disimpan dan bagaimana datanya tersusun, sehingga komputer dapat dengan cepat read, write, dan manage informasi.
+File system adalah lapisan Abstraksi. Tanpa file system, komputer hanya melihat disk sebagai jutaan "kotak" (block) berisi angka biner tanpa nama.
+File system memberikan struktur sehingga biner tersebut punya identitas.
 
-File system memiliki banyak jenis, sistem operasi windows yang paling banyak di gunakan dalam file system mereka yaitu "File Allocation Table" (FAT)
-versi pertama pada FAT itu release pada tahun 1980 yang bernama FAT12 dia hanya dapat menyimpan file yang lebih kecil dari 32MB dan memiliki volume pertisi maksimal 32MB.
+### Flat File System
+Jadi dulu data yg di simpan pada disk pada awalnya dia di simpan langsung berurutan / linear dan tidak terorganisi,
+sehingga rawan terjadi konflik penulisan data atau kesulitan dalam melacak lokasi file
+seperti yang saya katakan di awal `komputer hanya melihat disk sebagai jutaan "kotak" (block) berisi angka biner tanpa nama.`, maka dari itu
+file system hadir untuk pertama kalinya di sebut FAT (File Allocation Table) hadir menggantikan Flat File System, sehingga komputer mudah menyimpan dan mengelola file.
 
-tak lama setelah itu pada tahun 1984 muncul FAT16 untuk pertama kalinya storage dapat menyimpan 2GB dan memiliki volume pertisi maksimal 2GB,
-setelah itu pada tahun 1996 hadir FAT32 yang sampai detik ini kita masih digunakan dia dapat menyimpan hingga 4GB di windows dan mimiliki volume pertisi maksimal 2TB.
+dan masih banyak jenis jenis file system lain punya kelebihan dan kekurangannya masing masing.
+### Penjelasan lebih lengkap perbedaan antar file system
+- [Di sini](https://thesweetbits.com/ntfs-fat32-exfat-apfs-hfs-ext4-explained/)
 
-FAT32 memiliki banyak kekurangan jika kita mencoba copy sebuah file yang lebih besar dari 4GB ke sebuah file system FAT32 sudah dipastikan akan error walaupun storage kita
-masih memiliki banyak kapasitas ruang kosong,
-dari limitasi itu FAT32 masih sering di gunakan untuk USB Flash Drive (UFD), memory card, dan beberapa external disk, dengan alasan kompatibilitas yang sangat baik,
-FAT32 kompatibel dengan banyak sistem operasi bukan hanya windows dan linux tapi juga macOS kamera TV konsol, dll.
+> Namun, file system hanya mengatur bagaimana data disimpan, bukan memahami isi data tersebut. Data tetap berupa biner, dan agar bisa dimengerti manusia,
+> diperlukan encoding seperti ASCII atau UTF-8.
 
-NTFS
+### Tidak hanya data yang di simpan ?
+Setiap kali kita menyimpan file, ada `"data tentang data"` yang ikut dicatat agar file tersebut bisa dikelola.
+di sebut juga Header dan Metadata
 
-Contoh:
-NTFS
-ext4
+`Header (Identitas Internal)`: seperti Magic Numbers, Versi Format File, dan masih banyak lagi sesuai dengan format file,
 
-Yang dijelaskan:
+### Contoh Magic Numbers
+| File Type     | Magic Number (Hex) | Keterangan                   |
+| ------------- | ------------------ | ---------------------------- |
+| JPEG          | FF D8 FF           | Header awal file gambar JPEG |
+| PNG           | 89 50 4E 47        | Header file gambar PNG       |
+| PDF           | 25 50 44 46        | Header dokumen PDF           |
+| ZIP           | 50 4B              | Header arsip ZIP             |
+| EXE (Windows) | 4D 5A              | Header executable Windows    |
 
-menyimpan:
-lokasi file
-nama file
-ukuran
-mapping:
-file → block di disk
+`Metadata (Identitas Eksternal)`: seperti Nama File & Lokasi, kapan file di buat dan di rubah (Timestamps), hak akses file menentukan user bisa melakukan apa aja dan siapa aja 
+(Permissions), file tersebut hidden atau gak (Attributes)
 
-## Proses saat file disimpan
-Aplikasi (misal text editor) kirim data ke OS
-OS minta file system simpan
-File system:
-cari block kosong
-pecah data jadi chunk
-Data ditulis ke disk
-Metadata dicatat (nama, lokasi, dll)
-
+> Header adalah kontrak teknis antara file dan aplikasi atau software. Jika Metadata memberitahu sistem operasi "di mana" file itu berada,
+> maka Header memberitahu aplikasi "apa" isi file itu sebenarnya dan "bagaimana" cara mengolahnya.
+> Tanpa header, data biner hanyalah sampah yang tidak bisa diinterpretasikan.
