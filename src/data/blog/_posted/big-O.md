@@ -6,6 +6,7 @@ slug: algorithm-complexity-explained-big-o-time-complexity-and-space-complexity
 description: "Learn the fundamentals of algorithm complexity, including Big O notation, time complexity, and space complexity with practical examples."
 featured: false
 draft: false
+ogImage: ../../../assets/images/big-o-notation-grap.jpeg
 tags:
   - Fundamentals
   - Algorithm
