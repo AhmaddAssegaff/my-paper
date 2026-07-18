@@ -14,31 +14,35 @@ tags:
   - Big O
 ---
 
+# Big O Notation Grap
+
+![big-o-notation-grap](../../../assets/images/big-o-notation-grap.jpeg)
+
 # Apa Itu Algorithm Complexity
 
 Algorithm complexity adalah pengukuran matematis mengenai computational resources
 berlandaskan time and memory yang di butuhkan algoritma untuk menyelesaikan computation,
 operations etc berdasarkan inputnya biasanya di sebut `O(n)`
 
-# Dua Jenis Utama Pengukuran Algorithm Complexity
+## Dua Jenis Utama Pengukuran Algorithm Complexity
 
 `Time Complexity`: mengukur seberapa banyak resources yang digunakan (CPU) pada sebuah algoritma berjalan seiring bertambahnya jumlah data input
 
 `Space Complexity`: mengukur seberapa banyak resources yang digunakan (RAM) pada sebuah algoritma berjalan seiring bertambahnya jumlah data input pada sebuah algoritma berjalan seiring bertambahnya jumlah data input
 
-# Kapan Time Dan Space Bertambah Complexity
+## Kapan Time Dan Space Bertambah Complexity
 
 - `Time Complexity` bertambah jika dalam sebuah algoritma memiliki `step` yang banyak, semangkin banyak maka semangkin memakan resouce CPU
 - `Space Complexity` bertambah jika dalam sebuah algoritma memiliki `memory alocation` di dalam algoritma, semangkin banyak akan memakan banyak RAM
 
-## Space Complexity Konstan O(1) - Efisien:
+### Space Complexity Konstan O(1) - Efisien:
 
 Koki membuat 1.000 makanan secara bergantian. Dia hanya butuh 1 mangkok sementara yang dicuci
 dan dipake ulang setelah satu makanan selesai. Sebanyak apa pun makanannya (N), meja dapur (RAM) tetap lowong karena cuma ada 1 mangkok.
 
 > Sangat hemat memory dan mengorbankan waktu atau CPU (Time Complexity)
 
-## Space Complexity Linear O(N) - Boros Memori:
+### Space Complexity Linear O(N) - Boros Memori:
 
 Koki memotong bahan untuk 1.000 makanan sekaligus dan menaruh potongan setiap makanan ke mangkoknya masing-masing terlebih dahulu.
 Berarti koki butuh 1.000 mangkok sementara yang memenuhi meja dapur.
@@ -46,9 +50,7 @@ Jika pesanan bertambah jadi 10.000, meja dapur (RAM) akan penuh sesak dan kehabi
 
 > Sangat hemat waktu dan mengorbankan memory (Space Complexity)
 
----
-
-## Time-Space Trade-Off in Algorithms
+# Time-Space Trade-Off in Algorithms
 
 "A tradeoff is a situation where one thing increases and another thing decreases. It is a way to solve a problem in:
 Either in less time and by using more space, or
@@ -56,11 +58,13 @@ In very little space by spending a long amount of time."
 
 > https://www.geeksforgeeks.org/dsa/time-space-trade-off-in-algorithms/
 
+---
+
 # Understanding Big O Notation In Programming
 
 #### 1. O(1) Constant Time
 
-> Time Complexity : O(1)
+> Time Complexity : O(1),
 > space Complexity : O(1)
 
 ```python
@@ -78,7 +82,7 @@ pada deklarasi variable array of integer, sebenarnya data tersebut benar benar d
 
 #### 2. O(n) Linear Time
 
-> Time Complexity : O(n)
+> Time Complexity : O(n),
 > space Complexity : O(1)
 
 ```python
@@ -86,8 +90,8 @@ data = [1, 3, 6, 7, 9, 2, 4, 5, 7, 0]
 target = 5
 
 for value in data:
-  if value == target:
-    print("Found!")
+    if value == target:
+        print("Found!")
 ```
 
 Berbeda dengan `O(1)` di mana kita tahu lokasi pasti sebuah data lewat indeks,
@@ -99,36 +103,9 @@ Semakin banyak data yang dimasukkan, semakin banyak pula operasi pencarian yang 
 > Jika datanya ada 1 juta, maka skenario terburuknya (worst-case) komputer harus melakukan 1 juta kali pengecekan.
 > dan juga algoritma ini dapat di bilang memiliki ke unggulan jika data tidak sorted atau urut dia akan tetap menemukan datanya
 
-#### 3. O(n²) Quadratic Time
+#### 3. O(log n) Logarithmic Time
 
-> Time Complexity : O(n²)
-> space Complexity : O(1)
-
-```python
-data = [1, 2, 3, 4]
-
-def duplicate(data):
-  for i in range(len(data)):
-    for j in range(i + 1, len(data)):
-      if data[i] == data[j]:
-        return "data is duplicated"
-
-  return "data is not duplicated"
-```
-
-Jika pada `O(n)` kita hanya melakukan satu kali operan looping, pada `O(n²)` atau Quadratic Time kita melakukan perulangan di dalam perulangan (nested loop).
-Perhatikan fungsi pengecekan duplikat di atas. Untuk setiap elemen i, komputer harus berputar lagi melakukan looping j untuk mengecek elemen-elemen setelahnya.
-Artinya, jika kita memiliki data sebesar `n`, komputer akan melakukan operasi sekitar `n` times `n` (alias `n²`).Jika datanya hanya 5,
-operasinya masih kecil, yaitu sekitar 25 operasi. Namun,
-
-> jika datanya membengkak menjadi 10.000,
-> jumlah operasinya akan melesat tajam menjadi 100.000.000 (100 juta) operasi.
-> Algoritma ini biasanya terjadi ketika kita harus membandingkan setiap elemen dengan setiap elemen lainnya di dalam satu collection
-> Performanya akan menurun sangat drastis seiring bertambahnya data, sehingga sangat dihindari untuk scale data yang besar.
-
-#### 4. O(log n) Logarithmic Time
-
-> Time Complexity : O(log n)
+> Time Complexity : O(log n),
 > space Complexity : O(1)
 
 ```python
@@ -166,10 +143,44 @@ Perhatikan variabel `data` pada code di atas yang memiliki 8 elemen. Jika kita m
 
 > Secara matematis, jumlah operasi yang dilakukan adalah kebalikan dari eksponensial `(log n)`. Jika kita punya 1 juta data,
 > O(n) butuh 1 juta operasi, sedangkan O(log n) hanya butuh maksimal sekitar 20 operasi.
+> Visualisasi : [click di sini](https://youtu.be/fDKIpRe8GW4?si=O8pCyAGxYD4Q39Cm)
+
+#### 4. O(n²) Quadratic Time
+
+> Time Complexity : O(n²),
+> space Complexity : O(1)
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+
+        if not swapped:
+            break
+    return arr
+
+```
+
+Jika pada `O(n)` kita hanya melakukan satu kali operan looping, pada `O(n²)` atau Quadratic Time kita melakukan perulangan di dalam perulangan (nested loop).
+Perhatikan fungsi pengecekan duplikat di atas. Untuk setiap elemen i, komputer harus berputar lagi melakukan looping j untuk mengecek elemen-elemen setelahnya.
+Artinya, jika kita memiliki data sebesar `n`, komputer akan melakukan operasi sekitar `n` times `n` (alias `n²`).Jika datanya hanya 5,
+operasinya masih kecil, yaitu sekitar 25 operasi. Namun,
+
+> jika datanya membengkak menjadi 10.000,
+> jumlah operasinya akan melesat tajam menjadi 100.000.000 (100 juta) operasi.
+> Algoritma ini biasanya terjadi ketika kita harus membandingkan setiap elemen dengan setiap elemen lainnya di dalam satu collection
+> Performanya akan menurun sangat drastis seiring bertambahnya data, sehingga sangat dihindari untuk scale data yang besar.
+> Visualisasi: [click di sini](https://youtu.be/xli_FI7CuzA?si=Vp3eF4_q9h9078hZ)
 
 #### 5. O(n log n) Linearithmic Time
 
-> Time Complexity : O(n log n)
+> Time Complexity : O(n log n),
 > space Complexity : O(n)
 
 ```python
@@ -205,56 +216,28 @@ numbers = [5, 2, 7, 1, 9, 4]
 print(merge_sort(numbers))
 ```
 
-#### 6. O(2ⁿ)
+Untuk mengatasi lambatnya proses pengurutan data skala besar pada O(n^2),
+kita menggunakan Merge Sort. Algoritma ini menggunakan prinsip Divide and Conquer (membagi dan menaklukkan)
+dengan memecah masalah besar menjadi sub-masalah yang lebih kecil.
 
-> Time Complexity : O(2ⁿ)
-> space Complexity : O(n)
+Kompleksitas O(n log n) ini tercipta dari kombinasi dua proses utama:
 
-```python
-def fibonacci(n):
-    if n <= 1:
-        return n
+- Divide O(log n): Array acak akan dibelah secara rekursif menjadi dua bagian terus-menerus tepat
+  di tengah (mid) hingga menjadi potongan-potongan tunggal kecil yang berisi 1 elemen.
+- Conquer O(n): Potongan-potongan kecil tersebut digabungkan kembali (merge) secara linier
+  satu per satu sambil diurutkan posisinya menggunakan perulangan while.
 
-    return fibonacci(n - 1) + fibonacci(n - 2)
+> Merge Sort jauh lebih efisien untuk menangani jutaan data dibandingkan Bubble Sort. Namun, perhatikan variabel result = []
+> di dalam kode. Karena algoritma ini harus membuat array penampung baru di setiap proses penggabungan
+> data, Space Complexity-nya naik menjadi O(n). Ini adalah contoh nyata dari
+> Time-Space Trade-Off: kita mengorbankan kapasitas RAM demi mendapatkan kecepatan
+> eksekusi CPU yang luar biasa.
+> Visualisasi : [click di sini](https://youtu.be/4VqmGXwpLqc?si=9FH8LpA0BbnXwavK)
 
+---
 
-print(fibonacci(10))
-```
-
-#### 7. O(n!) Factorial Time
-
-> Time Complexity : O(n!)
-> space Complexity : O(n²)
-
-```python
-def permute(nums, current=[]):
-    if not nums:
-        print(current)
-        return
-
-    for i in range(len(nums)):
-        permute(
-            nums[:i] + nums[i + 1:],
-            current + [nums[i]]
-        )
-
-
-permute([1, 2, 3])
-```
-
-## Summary Table
-
-| Big O          | Common Example            | Typical Use Case      |
-| -------------- | ------------------------- | --------------------- |
-| **O(1)**       | Array indexing            | Direct access         |
-| **O(log n)**   | Binary Search             | Searching sorted data |
-| **O(n)**       | Linear Search             | Scanning a list       |
-| **O(n log n)** | Merge Sort, Heap Sort     | Efficient sorting     |
-| **O(n²)**      | Bubble Sort, nested loops | Comparing every pair  |
-| **O(2ⁿ)**      | Recursive Fibonacci       | Brute-force recursion |
-| **O(n!)**      | Permutations              | Backtracking problems |
-
-## Big O Notation Grap
-
-![big-o-notation-grap](../../../assets/images/big-o-notation-grap.jpeg)
-[image source](https://www.linkedin.com/pulse/big-o-notation-its-significance-llms-tarry-singh-vizxc/)
+> Masih banyak algoritma complexity lainnnya, tetapi dari kita memahami tentang topik
+> algoritma complexity bisa di simpulkan algoritma memiliki tujuan utama yaitu menyelesaikan masalah,
+> dari mulai identifikasi masalah lalu menentukan algoritma yang `tepat` bukan `cepat`,
+> O(n) tidak selalu buruk terkadang itu solusi yang di butuhkan bukan algoritma
+> yang di tulis 50 baris kode yang hasilnya kurang lebih sama bahkan tidak kelihatan perbedaannya.
