@@ -15,9 +15,9 @@ tags:
   - Big O
 ---
 
-# Big O Notation Grap
+# Big O Notation Graph
 
-![big-o-notation-grap](../../../assets/images/big-o-notation-grap.jpeg)
+![big-o-notation-graph](../../../assets/images/big-o-notation-grap.jpeg)
 
 # Apa Itu Algorithm Complexity
 
