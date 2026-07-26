@@ -6,7 +6,7 @@ slug: algorithm-complexity-explained-big-o-time-complexity-and-space-complexity
 description: "Learn the fundamentals of algorithm complexity, including Big O notation, time complexity, and space complexity with practical examples."
 featured: false
 draft: false
-ogImage: ../../../assets/images/big-o-notation-grap.jpeg
+ogImage: ../../../assets/images/big-o-notation-graph.jpeg
 tags:
   - Fundamentals
   - Algorithm
@@ -15,31 +15,31 @@ tags:
   - Big O
 ---
 
-# Big O Notation Graph
+## Big O Notation Graph
 
-![big-o-notation-graph](../../../assets/images/big-o-notation-grap.jpeg)
+![big-o-notation-graph](../../../assets/images/big-o-notation-graph.jpeg)
 
-# Apa Itu Algorithm Complexity
+## Apa Itu Algorithm Complexity
 
-Algorithm complexity adalah pengukuran matematis mengenai computational resources
+**Algorithm complexity** adalah pengukuran matematis mengenai computational resources
 berlandaskan time and memory yang di butuhkan algoritma untuk menyelesaikan computation,
-operations etc berdasarkan inputnya biasanya di sebut `O(n)`
+operations dan lain lain berdasarkan inputnya biasanya di sebut O(n)
 
-## Dua Jenis Utama Pengukuran Algorithm Complexity
+### Dua Jenis Utama Pengukuran Algorithm Complexity
 
-`Time Complexity`: mengukur seberapa banyak resources yang digunakan (CPU) pada sebuah algoritma berjalan seiring bertambahnya jumlah data input
+1. **Time Complexity**: mengukur seberapa banyak resources yang digunakan (CPU) pada sebuah algoritma berjalan seiring bertambahnya jumlah data input
 
-`Space Complexity`: mengukur seberapa banyak resources yang digunakan (RAM) pada sebuah algoritma berjalan seiring bertambahnya jumlah data input pada sebuah algoritma berjalan seiring bertambahnya jumlah data input
+2. **Space Complexity**: mengukur seberapa banyak resources yang digunakan (RAM) pada sebuah algoritma berjalan seiring bertambahnya jumlah data input pada sebuah algoritma berjalan seiring bertambahnya jumlah data input
 
-## Kapan Time Dan Space Bertambah Complexity
+### Kapan Time Dan Space Bertambah Complexity
 
-- `Time Complexity` bertambah jika dalam sebuah algoritma memiliki `step` yang banyak, semangkin banyak maka semangkin memakan resouce CPU
-- `Space Complexity` bertambah jika dalam sebuah algoritma memiliki `memory alocation` di dalam algoritma, semangkin banyak akan memakan banyak RAM
+- Time Complexity bertambah jika dalam sebuah algoritma memiliki step yang banyak, semangkin banyak maka semangkin memakan resouce CPU
+- Space Complexity bertambah jika dalam sebuah algoritma memiliki memory alocation di dalam algoritma, semangkin banyak akan memakan banyak RAM
 
 ### Space Complexity Konstan O(1) - Efisien:
 
 Koki membuat 1.000 makanan secara bergantian. Dia hanya butuh 1 mangkok sementara yang dicuci
-dan dipake ulang setelah satu makanan selesai. Sebanyak apa pun makanannya (N), meja dapur (RAM) tetap lowong karena cuma ada 1 mangkok.
+dan dipake ulang setelah satu makanan selesai. Sebanyak apa pun makanannya (n), meja dapur (RAM) tetap lowong karena cuma ada 1 mangkok.
 
 > Sangat hemat memory dan mengorbankan waktu atau CPU (Time Complexity)
 
@@ -51,7 +51,7 @@ Jika pesanan bertambah jadi 10.000, meja dapur (RAM) akan penuh sesak dan kehabi
 
 > Sangat hemat waktu dan mengorbankan memory (Space Complexity)
 
-# Time-Space Trade-Off in Algorithms
+## Time-Space Trade-Off in Algorithms
 
 "A tradeoff is a situation where one thing increases and another thing decreases. It is a way to solve a problem in:
 Either in less time and by using more space, or
@@ -61,9 +61,9 @@ In very little space by spending a long amount of time."
 
 ---
 
-# Understanding Big O Notation In Programming
+## Understanding Big O Notation In Programming
 
-#### 1. O(1) Constant Time
+### 1. O(1) Constant Time
 
 > Time Complexity : O(1),
 > space Complexity : O(1)
@@ -75,13 +75,13 @@ print(data[2])
 ```
 
 Code di atas sangat simple dan mudah dipahami, tetapi di balik itu banyak hal yang orang yang tidak mengerti cara kerja secara low-level-nya.
-pada deklarasi variable array of integer, sebenarnya data tersebut benar benar di simpan pada sebuah contiguous memory (memory yang berurutan),
+pada deklarasi variable array of integer `data`, sebenarnya data tersebut benar benar di simpan pada sebuah contiguous memory (memory yang berurutan),
 
-> Mengapa disebut `O(1)`? Karena komputer bisa langsung menghitung lokasi memori target secara instan
+> Mengapa disebut O(1)? Karena komputer bisa langsung menghitung lokasi memori target secara instan
 > menggunakan rumus indeks tanpa harus melakukan looping (perulangan) atau comparison (perbandingan) sama sekali.
 > Itulah mengapa ini dikatakan sebagai complexity tercepat.
 
-#### 2. O(n) Linear Time
+### 2. O(n) Linear Time
 
 > Time Complexity : O(n),
 > space Complexity : O(1)
@@ -95,16 +95,16 @@ for value in data:
         print("Found!")
 ```
 
-Berbeda dengan `O(1)` di mana kita tahu lokasi pasti sebuah data lewat indeks,
-pada `O(n)` kita harus mencari data secara manual.
+Berbeda dengan O(1) di mana kita tahu lokasi pasti sebuah data lewat indeks,
+pada O(n) kita harus mencari data secara manual.
 Code di atas menggunakan looping untuk mengeliminasi array of integer dari awal sampai akhir demi menemukan nilai target.
-Oleh karena itu, kecepatan algoritma ini dikatakan `O(n)` karena performanya berbanding lurus (linier) dengan jumlah data input `n`.
+Oleh karena itu, kecepatan algoritma ini dikatakan O(n) karena performanya berbanding lurus (linier) dengan jumlah data input n.
 Semakin banyak data yang dimasukkan, semakin banyak pula operasi pencarian yang harus dilakukan komputer.
 
 > Jika datanya ada 1 juta, maka skenario terburuknya (worst-case) komputer harus melakukan 1 juta kali pengecekan.
 > dan juga algoritma ini dapat di bilang memiliki ke unggulan jika data tidak sorted atau urut dia akan tetap menemukan datanya
 
-#### 3. O(log n) Logarithmic Time
+### 3. O(log n) Logarithmic Time
 
 > Time Complexity : O(log n),
 > space Complexity : O(1)
@@ -133,8 +133,8 @@ print(binary_search(data, 11))
 ```
 
 Algoritma binary search menggunakan konsep "divide and conquer" (membagi data menjadi setengah setiap langkah),
-algoritma ini dapat di gunakan jika data sudah jelas sorted sudah pasti urut dan algoritma ini adalah optimasi dari `O(n)`,
-dari pada kita melakukan pengecekan data satu persatu di setiap data yg ada sejumlah `n`,
+algoritma ini dapat di gunakan jika data sudah jelas sorted sudah pasti urut dan algoritma ini adalah optimasi dari O(n),
+dari pada kita melakukan pengecekan data satu persatu di setiap data yg ada sejumlah n,
 kita lansung membandingkan data dengan data yg berada di tengah `(mid)`,
 Jika nilai tengahnya lebih kecil atau lebih besar dari target, kita bisa langsung membuang setengah sisa data yang tidak relevan.
 Perhatikan variabel `data` pada code di atas yang memiliki 8 elemen. Jika kita mencari angka 11:
@@ -146,7 +146,7 @@ Perhatikan variabel `data` pada code di atas yang memiliki 8 elemen. Jika kita m
 > O(n) butuh 1 juta operasi, sedangkan O(log n) hanya butuh maksimal sekitar 20 operasi.
 > Visualisasi : [click di sini](https://youtu.be/fDKIpRe8GW4?si=O8pCyAGxYD4Q39Cm)
 
-#### 4. O(n²) Quadratic Time
+### 4. O(n²) Quadratic Time
 
 > Time Complexity : O(n²),
 > space Complexity : O(1)
@@ -168,7 +168,7 @@ def bubble_sort(arr):
 
 ```
 
-Jika pada `O(n)` kita hanya melakukan satu kali operan looping, pada `O(n²)` atau Quadratic Time kita melakukan perulangan di dalam perulangan (nested loop).
+Jika pada O(n) kita hanya melakukan satu kali operan looping, pada O(n²) atau Quadratic Time kita melakukan perulangan di dalam perulangan (nested loop).
 Perhatikan fungsi pengecekan duplikat di atas. Untuk setiap elemen i, komputer harus berputar lagi melakukan looping j untuk mengecek elemen-elemen setelahnya.
 Artinya, jika kita memiliki data sebesar `n`, komputer akan melakukan operasi sekitar `n` times `n` (alias `n²`).Jika datanya hanya 5,
 operasinya masih kecil, yaitu sekitar 25 operasi. Namun,
@@ -179,7 +179,7 @@ operasinya masih kecil, yaitu sekitar 25 operasi. Namun,
 > Performanya akan menurun sangat drastis seiring bertambahnya data, sehingga sangat dihindari untuk scale data yang besar.
 > Visualisasi: [click di sini](https://youtu.be/xli_FI7CuzA?si=Vp3eF4_q9h9078hZ)
 
-#### 5. O(n log n) Linearithmic Time
+### 5. O(n log n) Linearithmic Time
 
 > Time Complexity : O(n log n),
 > space Complexity : O(n)
@@ -239,6 +239,6 @@ Kompleksitas O(n log n) ini tercipta dari kombinasi dua proses utama:
 
 > Masih banyak algoritma complexity lainnnya, tetapi dari kita memahami tentang topik
 > algoritma complexity bisa di simpulkan algoritma memiliki tujuan utama yaitu menyelesaikan masalah,
-> dari mulai identifikasi masalah lalu menentukan algoritma yang `tepat` bukan `cepat`,
+> dari mulai identifikasi masalah lalu menentukan algoritma yang tepat bukan cepat,
 > O(n) tidak selalu buruk terkadang itu solusi yang di butuhkan bukan algoritma
 > yang di tulis 50 baris kode yang hasilnya kurang lebih sama bahkan tidak kelihatan perbedaannya.
